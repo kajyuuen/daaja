@@ -1,0 +1,5 @@
+from daaja.eda.easy_data_augmentor import EasyDataAugmentor
+from daaja.eda.randam_delete_augmentor import RandamDeleteAugmentor
+from daaja.eda.randam_insert_augmentor import RandamInsertAugmentor
+from daaja.eda.randam_swap_augmentor import RandamSwapAugmentor
+from daaja.eda.synonym_replace_augmentor import SynonymReplaceAugmentor

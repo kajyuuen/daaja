@@ -1,0 +1,22 @@
+[tool.poetry]
+name = "daaja"
+version = "0.0.1"
+description = ""
+authors = ["Koga Kobayashi <kajyuuen@gmail.com>"]
+license = "MIT"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+requests = "^2.27.1"
+pandas = "^1.4.0"
+SudachiPy = "^0.6.3"
+SudachiDict-core = "^20211220"
+
+[tool.poetry.dev-dependencies]
+flake8 = "^4.0.1"
+ipython = "^8.0.1"
+pytest = "^7.0.0"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
