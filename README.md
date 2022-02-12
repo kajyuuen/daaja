@@ -61,6 +61,7 @@ The format of input.tsv is as follows:
 #### In Python
 
 ```python
+from daaja.ner_sda import SimpleDataAugmentationforNER
 tokens_list = [
     ["私", "は", "田中", "と", "いい", "ます"],
     ["筑波", "大学", "に", "所属", "して", "ます"],
