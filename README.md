@@ -18,7 +18,7 @@ pip install daaja
 #### Command
 
 ```sh
-python -m aug_ja.eda.run --input input.tsv --output data_augmentor.tsv
+python -m daaja.eda.run --input input.tsv --output data_augmentor.tsv
 ```
 
 The format of input.tsv is as follows:
@@ -31,7 +31,7 @@ The format of input.tsv is as follows:
 #### In Python
 
 ```python
-from aug_ja.eda import EasyDataAugmentor
+from daaja.eda import EasyDataAugmentor
 augmentor = EasyDataAugmentor(alpha_sr=0.1, alpha_ri=0.1, alpha_rs=0.1, p_rd=0.1, num_aug=4)
 text = "日本語でデータ拡張を行う"
 aug_texts = augmentor.augments(text)
@@ -44,7 +44,7 @@ print(aug_texts)
 #### Command
 
 ```sh
-python -m aug_ja.ner_sda.run --input input.tsv --output data_augmentor.tsv
+python -m daaja.ner_sda.run --input input.tsv --output data_augmentor.tsv
 ```
 
 The format of input.tsv is as follows:
