@@ -1,23 +1,8 @@
-from daaja.ner_sda.synonym_replacement_augmentor import \
-    SynonymReplacementAugmentor
-from daaja.ner_sda.utils import get_token2prob_in_label
+from daaja.ner_sda import SynonymReplacementAugmentor
 
 
 def test_synonym_replacement_augmentor():
-    tokens_list = [
-        ["私", "は", "田中", "と", "いい", "ます"],
-        ["筑波", "大学", "に", "所属", "して", "ます"],
-        ["今日", "から", "筑波", "大学", "に", "通う"],
-        ["茨城", "大学"],
-    ]
-    labels_list = [
-        ["O", "O", "B-PER", "O", "O", "O"],
-        ["B-ORG", "I-ORG", "O", "O", "O", "O"],
-        ["B-DATE", "O", "B-ORG", "I-ORG", "O", "O"],
-        ["B-ORG", "I-ORG"],
-    ]
-    token_and_prob_in_label = get_token2prob_in_label(tokens_list, labels_list)
-    augmentor = SynonymReplacementAugmentor(token_and_prob_in_label, p=1)
+    augmentor = SynonymReplacementAugmentor(p=1)
     target_tokens = ["君", "は", "田中", "君", "かい"]
     target_labels = ["O", "O", "B-PER", "O", "O"]
 

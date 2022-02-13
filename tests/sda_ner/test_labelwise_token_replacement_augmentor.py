@@ -1,5 +1,4 @@
-from daaja.ner_sda.labelwise_token_replacement_augmentor import \
-    LabelwiseTokenReplacementAugmentor
+from daaja.ner_sda import LabelwiseTokenReplacementAugmentor
 from daaja.ner_sda.utils import get_token2prob_in_label
 
 

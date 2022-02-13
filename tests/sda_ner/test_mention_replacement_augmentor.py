@@ -1,5 +1,4 @@
-from daaja.ner_sda.mention_replacement_augmentor import \
-    MentionReplacementAugmentor
+from daaja.ner_sda import MentionReplacementAugmentor
 from daaja.ner_sda.utils import get_entity_dict
 
 
