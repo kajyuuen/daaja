@@ -1,5 +1,4 @@
-from daaja.ner_sda.shuffle_within_segments_augmentor import \
-    ShuffleWithinSegmentsAugmentor
+from daaja.ner_sda import ShuffleWithinSegmentsAugmentor
 
 
 def test_shuffle_within_segments_augmentor():
