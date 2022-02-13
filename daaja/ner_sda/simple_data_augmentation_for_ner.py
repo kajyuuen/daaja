@@ -32,7 +32,7 @@ class SimpleDataAugmentationforNER:
         self.labelwise_token_replacement_augmentor = LabelwiseTokenReplacementAugmentor(token_and_prob_in_label, p=p_lwtr, resouces=resouces)
         self.mention_replacement_augmentor = MentionReplacementAugmentor(entity_dict=entity_dict, p=p_mr)
         self.shuffle_within_segments_augmentor = ShuffleWithinSegmentsAugmentor(p=p_sis)
-        self.synonym_replacement_augmentor = SynonymReplacementAugmentor(token_and_prob_in_label=token_and_prob_in_label, p=p_sr, resouces=resouces)
+        self.synonym_replacement_augmentor = SynonymReplacementAugmentor(p=p_sr, resouces=resouces)
 
         # params
         self.num_aug = num_aug

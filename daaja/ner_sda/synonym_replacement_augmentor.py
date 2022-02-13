@@ -9,12 +9,10 @@ from daaja.resouces import Resouces
 
 class SynonymReplacementAugmentor(NerAugmentor):
     def __init__(self,
-                 token_and_prob_in_label: TokenAndProbInLabel,
                  p: float = 0.1,
                  resouces: Resouces = Resouces()) -> None:
         self.p = p
         self.resouces = resouces
-        self.token_and_prob_in_label = token_and_prob_in_label
 
     def augment(self,
                 tokens: List[str],
