@@ -31,8 +31,6 @@ class SynonymReplacementAugmentor(NerAugmentor):
                 if len(synonyms_set) == 0:
                     generated_token = token
                 else:
-                    # NOTE: トークナイザーによっては予期してないトークンが入る可能性がある
-                    # 例: 秘密捜査員はトークナイザーによっては秘密/捜査員になる
                     synonym = random.choice(list(synonyms_set))
                     generated_token = synonym
             generated_tokens.append(generated_token)
