@@ -1,15 +1,8 @@
 name: release
 
 on:
-  workflow_dispatch:
-    inputs:
-      version:
-        description: "Next Version"
-        required: true
-        default: "x.y.z"
-      release_note:
-        description: "release note"
-        required: false
+  release:
+    types: [published]
 jobs:
   release:
     runs-on: ubuntu-latest
