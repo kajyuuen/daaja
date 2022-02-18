@@ -6,6 +6,7 @@ from typing import List, Tuple
 
 from daaja.ner_sda.simple_data_augmentation_for_ner import \
     SimpleDataAugmentationforNER
+from tqdm import tqdm
 
 
 @dataclass
@@ -30,7 +31,7 @@ def main(input_path: Path,
                                        p_lwtr=p_lwtr, p_mr=p_mr, p_sis=p_sis, p_sr=p_sr, num_aug=num_aug)
 
     result_tokens_list, result_labels_list = [], []
-    for tokens, labels in zip(tokens_list, labels_list):
+    for tokens, labels in tqdm(zip(tokens_list, labels_list)):
         arg_tokens_list, arg_labels_list = sda.augments(tokens, labels)
         result_tokens_list.extend(arg_tokens_list)
         result_labels_list.extend(arg_labels_list)

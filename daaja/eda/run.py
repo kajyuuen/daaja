@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import List
 
 from daaja.eda import EasyDataAugmentor
+from tqdm import tqdm
 
 
 @dataclass
@@ -27,7 +28,7 @@ def main(input_path: Path,
     eda = EasyDataAugmentor(alpha_sr=alpha_sr, alpha_ri=alpha_ri, alpha_rs=alpha_rs, p_rd=p_rd, num_aug=num_aug)
 
     results = []
-    for data in datum:
+    for data in tqdm(datum):
         aug_sentences = eda.augments(data.sentence)
         results.extend([Data(data.label, aug_sentence) for aug_sentence in aug_sentences])
 
