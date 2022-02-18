@@ -5,3 +5,6 @@ __pycache__
 /tmp
 dist
 .python-version
+dataset
+subsets
+.ipynb_checkpoints
