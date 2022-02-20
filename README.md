@@ -3,7 +3,7 @@
 This repository has a implementations of data augmentation for NLP for Japanese:
 
 - [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
-- [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/1901.11196)
+- [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
 
 ## Install
 
@@ -39,7 +39,7 @@ print(aug_texts)
 # ['日本語でを拡張データ行う', '日本語でデータ押広げるを行う', '日本語でデータ拡張を行う', '日本語で智見拡張を行う', '日本語でデータ拡張を行う']
 ```
 
-### [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/1901.11196)
+### [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
 
 #### Command
 

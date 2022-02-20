@@ -42,19 +42,19 @@ def main(input_path: Path,
 def load_conll(input_path: Path) -> Tuple[List[List[str]], List[List[str]]]:
     tokens_list, labels_list = [], []
     tokens, labels = [], []
-    with open(input_path, encoding="utf-8", newline='') as f:
-        for cols in csv.reader(f, delimiter='\t'):
-            if len(cols) == 0:
+    for line in input_path.read_text().split("\n"):
+        cols = line.split("\t")
+        if len(cols) != 2:
+            if len(tokens) > 0:
                 tokens_list.append(tokens)
                 labels_list.append(labels)
                 tokens, labels = [], []
-                continue
-            tokens.append(cols[0])
-            labels.append(cols[1])
+            continue
+        tokens.append(cols[0])
+        labels.append(cols[1])
     if len(tokens) > 0:
         tokens_list.append(tokens)
         labels_list.append(labels)
-
     return tokens_list, labels_list
 
 

@@ -8,3 +8,4 @@ dist
 dataset
 subsets
 .ipynb_checkpoints
+*.zip
