@@ -2,9 +2,6 @@
 
 This repository has a implementations of data augmentation for NLP for Japanese:
 
-- [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
-- [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
-
 ## Install
 
 ```
@@ -13,12 +10,38 @@ pip install daaja
 
 ## How to use
 
-### [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
+### Augmenter
 
-#### Command
+#### Sentence Augmenter
+
+|          Augmenter          | ref                                       |
+| :-------------------------: | ----------------------------------------- |
+|    RandamDeleteAugmentor    | [\[1\]](https://arxiv.org/abs/1901.11196) |
+|    RandamInsertAugmentor    | [\[1\]](https://arxiv.org/abs/1901.11196) |
+|     RandamSwapAugmentor     | [\[1\]](https://arxiv.org/abs/1901.11196) |
+| SynonymReplacementAugmentor | [\[1\]](https://arxiv.org/abs/1901.11196) |
+
+- \[1\] [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
+
+#### Sequence Labeling Augmenter
+
+|             Augmenter              | ref                                       |
+| :--------------------------------: | ----------------------------------------- |
+| LabelwiseTokenReplacementAugmentor | [\[2\]](https://arxiv.org/abs/1901.11196) |
+|    MentionReplacementAugmentor     | [\[2\]](https://arxiv.org/abs/1901.11196) |
+|   ShuffleWithinSegmentsAugmentor   | [\[2\]](https://arxiv.org/abs/1901.11196) |
+|    SynonymReplacementAugmentor     | [\[2\]](https://arxiv.org/abs/1901.11196) |
+
+- \[2\] [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
+
+### Method
+
+#### [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
+
+##### Command
 
 ```sh
-python -m daaja.eda.run --input input.tsv --output data_augmentor.tsv
+python -m daaja.methods.eda.run --input input.tsv --output data_augmentor.tsv
 ```
 
 The format of input.tsv is as follows:
@@ -28,10 +51,10 @@ The format of input.tsv is as follows:
 0	つまらない映画だった
 ```
 
-#### In Python
+##### In Python
 
 ```python
-from daaja.eda import EasyDataAugmentor
+from daaja.methods.eda.easy_data_augmentor import EasyDataAugmentor
 augmentor = EasyDataAugmentor(alpha_sr=0.1, alpha_ri=0.1, alpha_rs=0.1, p_rd=0.1, num_aug=4)
 text = "日本語でデータ拡張を行う"
 aug_texts = augmentor.augments(text)
@@ -39,12 +62,12 @@ print(aug_texts)
 # ['日本語でを拡張データ行う', '日本語でデータ押広げるを行う', '日本語でデータ拡張を行う', '日本語で智見拡張を行う', '日本語でデータ拡張を行う']
 ```
 
-### [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
+#### [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
 
-#### Command
+##### Command
 
 ```sh
-python -m daaja.ner_sda.run --input input.tsv --output data_augmentor.tsv
+python -m daaja.methods.ner_sda.run --input input.tsv --output data_augmentor.tsv
 ```
 
 The format of input.tsv is as follows:
@@ -58,10 +81,11 @@ The format of input.tsv is as follows:
 ます	O
 ```
 
-#### In Python
+##### In Python
 
 ```python
-from daaja.ner_sda import SimpleDataAugmentationforNER
+from daaja.methods.ner_sda.simple_data_augmentation_for_ner import \
+    SimpleDataAugmentationforNER
 tokens_list = [
     ["私", "は", "田中", "と", "いい", "ます"],
     ["筑波", "大学", "に", "所属", "して", "ます"],

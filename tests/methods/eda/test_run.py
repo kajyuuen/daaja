@@ -1,0 +1,9 @@
+from pathlib import Path
+
+from daaja.methods.eda.run import load_tsv
+
+
+def test_load_tsv():
+    tsv_path = Path("./tests/methods/eda/fixtures/text.tsv")
+    results = load_tsv(tsv_path)
+    assert 5 == len(results)
