@@ -1,18 +1,19 @@
-import random
 from typing import List, Tuple
 
 import numpy as np
-from daaja.ner_augmentor import NerAugmentor
-from daaja.ner_sda.utils import TokenAndProbInLabel
+from daaja.augmentors.ner.ner_augmentor import NerAugmentor
+from daaja.augmentors.ner.utils import TokenAndProbInLabel
 from daaja.resouces import Resouces
 
 
-class SynonymReplacementAugmentor(NerAugmentor):
+class LabelwiseTokenReplacementAugmentor(NerAugmentor):
     def __init__(self,
+                 token_and_prob_in_label: TokenAndProbInLabel,
                  p: float = 0.1,
                  resouces: Resouces = Resouces()) -> None:
         self.p = p
         self.resouces = resouces
+        self.token_and_prob_in_label = token_and_prob_in_label
 
     def augment(self,
                 tokens: List[str],
@@ -23,14 +24,8 @@ class SynonymReplacementAugmentor(NerAugmentor):
             if mask == 0 or self.resouces.is_stopword(token):
                 generated_token = token
             else:
-                synonyms_set = set(self.resouces.get_synonyms(token))
-                if token in synonyms_set:
-                    synonyms_set.remove(token)
-                if len(synonyms_set) == 0:
-                    generated_token = token
-                else:
-                    synonym = random.choice(list(synonyms_set))
-                    generated_token = synonym
+                random_idx = np.random.choice(len(self.token_and_prob_in_label[label][1]), 1, p=self.token_and_prob_in_label[label][1])[0]
+                generated_token = self.token_and_prob_in_label[label][0][random_idx]
             generated_tokens.append(generated_token)
 
         return generated_tokens, labels

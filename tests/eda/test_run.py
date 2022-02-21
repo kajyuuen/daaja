@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from daaja.eda.run import load_tsv
+from daaja.methods.eda.run import load_tsv
 
 
 def test_load_tsv():

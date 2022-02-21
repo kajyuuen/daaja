@@ -1,4 +1,4 @@
-from daaja.eda import RandamSwapAugmentor
+from daaja.augmentors.sentence.randam_swap_augmentor import RandamSwapAugmentor
 
 
 def test_randam_swap_augmentor():

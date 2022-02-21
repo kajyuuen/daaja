@@ -1,4 +1,4 @@
-from daaja.eda import EasyDataAugmentor
+from daaja.methods.eda.easy_data_augmentor import EasyDataAugmentor
 
 
 def test_easy_data_augmentor():

@@ -1,12 +1,11 @@
 import random
-from typing import List, Optional
 
-from daaja.augmentor import Augmentor
+from daaja.augmentors.sentence.sentence_augmentor import SentenceAugmentor
 from daaja.resouces import Resouces
 from daaja.tokenizer import Tokenizer
 
 
-class SynonymReplaceAugmentor(Augmentor):
+class SynonymReplaceAugmentor(SentenceAugmentor):
     def __init__(self,
                  alpha: float = 0.1,
                  resouces: Resouces = Resouces(),
@@ -16,22 +15,17 @@ class SynonymReplaceAugmentor(Augmentor):
         self.tokenizer = tokenizer
 
     def augment(self, sentence: str) -> str:
-        tokens, selected_tokens = self.tokenizer.tokenize(sentence)
-        n = max(1, int(self.alpha * len(tokens)))
-        converted_tokens = self.synonym_replace(tokens, selected_tokens, n)
-        return "".join(converted_tokens)
-
-    def synonym_replace(self, tokens: List[str], selected_tokens: List[Optional[str]], n: int) -> List[str]:
         """Randomly replace n tokens with their synonyms.
 
         Args:
-            tokens (List[str]): Sentence
-            selected_tokens (List[Optional[str]]): List of words to look up synonyms for.
-            n (int): Number of words to be inserted.
+            sentence (str): sentence
 
         Returns:
-            List[str]: [description]
+            str: synonym_replaced_sentence
         """
+        tokens, selected_tokens = self.tokenizer.tokenize(sentence)
+        n = max(1, int(self.alpha * len(tokens)))
+
         converted_tokens = tokens.copy()
         selected_token_idxes = [i for i, token in enumerate(selected_tokens) if token is not None]
         random.shuffle(selected_token_idxes)
@@ -47,4 +41,4 @@ class SynonymReplaceAugmentor(Augmentor):
             cnt += 1
             if cnt >= n:
                 break
-        return converted_tokens
+        return "".join(converted_tokens)

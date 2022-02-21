@@ -1,12 +1,12 @@
 import random
 from typing import List, Optional
 
-from daaja.augmentor import Augmentor
+from daaja.augmentors.sentence.sentence_augmentor import SentenceAugmentor
 from daaja.resouces import Resouces
 from daaja.tokenizer import Tokenizer
 
 
-class RandamInsertAugmentor(Augmentor):
+class RandamInsertAugmentor(SentenceAugmentor):
     def __init__(self,
                  alpha: float = 0.1,
                  resouces: Resouces = Resouces(),
@@ -16,26 +16,21 @@ class RandamInsertAugmentor(Augmentor):
         self.tokenizer = tokenizer
 
     def augment(self, sentence: str) -> str:
-        tokens, selected_tokens = self.tokenizer.tokenize(sentence)
-        n = max(1, int(self.alpha * len(tokens)))
-        converted_tokens = self.random_insert(tokens, selected_tokens, n)
-        return "".join(converted_tokens)
-
-    def random_insert(self, tokens: List[str], selected_tokens: List[Optional[str]], n: int) -> List[str]:
-        """Randomly insert a selected token synonym from selected_tokens in tokens.
+        """Randomly insert a selected token synonym from selected_tokens in sentence.
 
         Args:
-            tokens (List[str]): Sentence
-            selected_tokens (List[Optional[str]]): List of words to look up synonyms for.
-            n (int): Number of words to be inserted.
+            sentence (str): sentence
 
         Returns:
-            List[str]: tokens with n synonyms inserted.
+            str: swaped sentence
         """
+        tokens, selected_tokens = self.tokenizer.tokenize(sentence)
+        n = max(1, int(self.alpha * len(tokens)))
+
         converted_tokens = tokens.copy()
         for _ in range(n):
             converted_tokens = self._add_word(converted_tokens, selected_tokens)
-        return converted_tokens
+        return "".join(converted_tokens)
 
     def _add_word(self, tokens: List[str], selected_tokens: List[Optional[str]]) -> List[str]:
         synonyms = []
@@ -46,7 +41,7 @@ class RandamInsertAugmentor(Augmentor):
             synonyms = self.resouces.get_synonyms(random_selected_token)
             cnt += 1
             # NOTE: 10 is magic number.
-            # If this function don't see a synonym after looking for it 10 times,  done.
+            # If this function don't see a synonym after looking for it 10 times, done.
             if cnt >= 10:
                 return tokens
         random_idx = random.randint(0, len(tokens) - 1)

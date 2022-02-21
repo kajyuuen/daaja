@@ -1,6 +1,6 @@
-class Augmentor:
+class SentenceAugmentor:
     def __init__(self) -> None:
         pass
 
-    def augment(self, text: str) -> str:
+    def augment(self, sentence: str) -> str:
         raise NotImplementedError

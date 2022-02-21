@@ -1,5 +1,6 @@
-from daaja.ner_sda import MentionReplacementAugmentor
-from daaja.ner_sda.utils import get_entity_dict
+from daaja.augmentors.ner.mention_replacement_augmentor import \
+    MentionReplacementAugmentor
+from daaja.augmentors.ner.utils import get_entity_dict
 
 
 def test_mention_replacement_augmentor():
@@ -22,7 +23,6 @@ def test_mention_replacement_augmentor():
 
     new_tokens, _ = augmentor.augment(target_tokens, target_labels)
     assert new_tokens != target_tokens
-
 
 
 def test_mention_replacement_augmentor_2():

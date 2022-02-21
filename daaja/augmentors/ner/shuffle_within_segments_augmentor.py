@@ -2,7 +2,7 @@ import random
 from typing import List, Tuple
 
 import numpy as np
-from daaja.ner_augmentor import NerAugmentor
+from daaja.augmentors.ner.ner_augmentor import NerAugmentor
 
 
 class ShuffleWithinSegmentsAugmentor(NerAugmentor):

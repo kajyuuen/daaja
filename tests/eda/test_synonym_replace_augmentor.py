@@ -1,4 +1,5 @@
-from daaja.eda import SynonymReplaceAugmentor
+from daaja.augmentors.sentence.synonym_replace_augmentor import \
+    SynonymReplaceAugmentor
 
 
 def test_synonym_replace_augmentor():

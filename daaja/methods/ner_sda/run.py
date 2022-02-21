@@ -1,10 +1,9 @@
 import argparse
-import csv
 from dataclasses import dataclass
 from pathlib import Path
 from typing import List, Tuple
 
-from daaja.ner_sda.simple_data_augmentation_for_ner import \
+from daaja.methods.ner_sda.simple_data_augmentation_for_ner import \
     SimpleDataAugmentationforNER
 from tqdm import tqdm
 

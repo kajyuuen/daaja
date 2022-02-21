@@ -1,4 +1,5 @@
-from daaja.ner_sda import SimpleDataAugmentationforNER
+from daaja.methods.ner_sda.simple_data_augmentation_for_ner import \
+    SimpleDataAugmentationforNER
 
 
 def test_simple_data_augmentation_for_ner():

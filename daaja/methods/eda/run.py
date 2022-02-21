@@ -4,7 +4,7 @@ from dataclasses import dataclass
 from pathlib import Path
 from typing import List
 
-from daaja.eda import EasyDataAugmentor
+from daaja.methods.eda.easy_data_augmentor import EasyDataAugmentor
 from tqdm import tqdm
 
 

@@ -1,6 +1,6 @@
 from pathlib import Path
 
-from daaja.ner_sda.run import load_conll
+from daaja.methods.ner_sda.run import load_conll
 
 
 def test_load_conll():

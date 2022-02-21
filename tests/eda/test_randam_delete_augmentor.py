@@ -1,4 +1,5 @@
-from daaja.eda import RandamDeleteAugmentor
+from daaja.augmentors.sentence.randam_delete_augmentor import \
+    RandamDeleteAugmentor
 
 
 def test_randam_delete_augmentor():
