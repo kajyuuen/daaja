@@ -2,9 +2,6 @@
 
 This repository has a implementations of data augmentation for NLP for Japanese:
 
-- [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
-- [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
-
 ## Install
 
 ```
@@ -35,7 +32,7 @@ pip install daaja
 |   ShuffleWithinSegmentsAugmentor   | [\[2\]](https://arxiv.org/abs/1901.11196) |
 |    SynonymReplacementAugmentor     | [\[2\]](https://arxiv.org/abs/1901.11196) |
 
-- \[1\] [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
+- \[2\] [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
 
 ### Method
 
