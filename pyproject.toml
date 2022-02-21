@@ -1,7 +1,7 @@
 [tool.poetry]
 name = "daaja"
-version = "0.0.3"
-description = ""
+version = "0.0.4"
+description = "NLP data augmentation tool"
 authors = ["Koga Kobayashi <kajyuuen@gmail.com>"]
 license = "MIT"
 
