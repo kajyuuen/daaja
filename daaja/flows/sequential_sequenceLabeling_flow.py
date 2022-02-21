@@ -1,13 +1,14 @@
 import random
 from typing import List, Tuple
 
-from daaja.augmentors.ner.ner_augmentor import NerAugmentor
+from daaja.augmentors.sequence_labeling.sequence_labeling_augmentor import \
+    SequenceLabelingAugmentor
 from tqdm import tqdm
 
 
 class SequentialSequenceLabelingFlow:
     def __init__(self,
-                 augmentors: List[NerAugmentor],
+                 augmentors: List[SequenceLabelingAugmentor],
                  num_aug: int) -> None:
         self.augmentors = augmentors
         self.num_aug = num_aug

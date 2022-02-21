@@ -1,4 +1,4 @@
-from daaja.augmentors.ner.synonym_replacement_augmentor import \
+from daaja.augmentors.sequence_labeling.synonym_replacement_augmentor import \
     SynonymReplacementAugmentor
 
 

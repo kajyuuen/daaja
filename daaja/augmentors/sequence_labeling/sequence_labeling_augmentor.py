@@ -1,7 +1,7 @@
 from typing import List
 
 
-class NerAugmentor:
+class SequenceLabelingAugmentor:
     def __init__(self) -> None:
         pass
 

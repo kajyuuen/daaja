@@ -1,4 +1,4 @@
-from daaja.augmentors.ner.shuffle_within_segments_augmentor import \
+from daaja.augmentors.sequence_labeling.shuffle_within_segments_augmentor import \
     ShuffleWithinSegmentsAugmentor
 
 

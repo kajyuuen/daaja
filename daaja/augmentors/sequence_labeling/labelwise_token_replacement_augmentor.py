@@ -1,12 +1,13 @@
 from typing import List, Tuple
 
 import numpy as np
-from daaja.augmentors.ner.ner_augmentor import NerAugmentor
-from daaja.augmentors.ner.utils import TokenAndProbInLabel
+from daaja.augmentors.sequence_labeling.sequence_labeling_augmentor import \
+    SequenceLabelingAugmentor
+from daaja.augmentors.sequence_labeling.utils import TokenAndProbInLabel
 from daaja.resouces import Resouces
 
 
-class LabelwiseTokenReplacementAugmentor(NerAugmentor):
+class LabelwiseTokenReplacementAugmentor(SequenceLabelingAugmentor):
     def __init__(self,
                  token_and_prob_in_label: TokenAndProbInLabel,
                  p: float = 0.1,

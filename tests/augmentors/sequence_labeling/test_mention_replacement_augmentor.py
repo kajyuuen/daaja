@@ -1,6 +1,6 @@
-from daaja.augmentors.ner.mention_replacement_augmentor import \
+from daaja.augmentors.sequence_labeling.mention_replacement_augmentor import \
     MentionReplacementAugmentor
-from daaja.augmentors.ner.utils import get_entity_dict
+from daaja.augmentors.sequence_labeling.utils import get_entity_dict
 
 
 def test_mention_replacement_augmentor():

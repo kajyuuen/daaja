@@ -1,11 +1,12 @@
 from typing import List, Tuple
 
 import numpy as np
-from daaja.augmentors.ner.ner_augmentor import NerAugmentor
-from daaja.augmentors.ner.utils import EntityDict
+from daaja.augmentors.sequence_labeling.sequence_labeling_augmentor import \
+    SequenceLabelingAugmentor
+from daaja.augmentors.sequence_labeling.utils import EntityDict
 
 
-class MentionReplacementAugmentor(NerAugmentor):
+class MentionReplacementAugmentor(SequenceLabelingAugmentor):
     def __init__(self,
                  entity_dict: EntityDict,
                  p: float = 0.1) -> None:

@@ -2,11 +2,12 @@ import random
 from typing import List, Tuple
 
 import numpy as np
-from daaja.augmentors.ner.ner_augmentor import NerAugmentor
+from daaja.augmentors.sequence_labeling.sequence_labeling_augmentor import \
+    SequenceLabelingAugmentor
 from daaja.resouces import Resouces
 
 
-class SynonymReplacementAugmentor(NerAugmentor):
+class SynonymReplacementAugmentor(SequenceLabelingAugmentor):
     def __init__(self,
                  p: float = 0.1,
                  resouces: Resouces = Resouces()) -> None:

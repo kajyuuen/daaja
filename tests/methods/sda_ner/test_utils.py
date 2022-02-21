@@ -1,4 +1,4 @@
-from daaja.augmentors.ner.utils import get_entity_dict, get_token2prob_in_label
+from daaja.augmentors.sequence_labeling.utils import get_entity_dict, get_token2prob_in_label
 
 
 def test_get_token2prob_in_label():

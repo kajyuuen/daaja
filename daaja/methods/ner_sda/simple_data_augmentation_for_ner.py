@@ -1,14 +1,15 @@
 from typing import List, Tuple
 
-from daaja.augmentors.ner.labelwise_token_replacement_augmentor import \
+from daaja.augmentors.sequence_labeling.labelwise_token_replacement_augmentor import \
     LabelwiseTokenReplacementAugmentor
-from daaja.augmentors.ner.mention_replacement_augmentor import \
+from daaja.augmentors.sequence_labeling.mention_replacement_augmentor import \
     MentionReplacementAugmentor
-from daaja.augmentors.ner.shuffle_within_segments_augmentor import \
+from daaja.augmentors.sequence_labeling.shuffle_within_segments_augmentor import \
     ShuffleWithinSegmentsAugmentor
-from daaja.augmentors.ner.synonym_replacement_augmentor import \
+from daaja.augmentors.sequence_labeling.synonym_replacement_augmentor import \
     SynonymReplacementAugmentor
-from daaja.augmentors.ner.utils import get_entity_dict, get_token2prob_in_label
+from daaja.augmentors.sequence_labeling.utils import (get_entity_dict,
+                                                      get_token2prob_in_label)
 from daaja.flows.sequential_sequenceLabeling_flow import \
     SequentialSequenceLabelingFlow
 from daaja.resouces import Resouces

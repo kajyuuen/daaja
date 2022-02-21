@@ -2,10 +2,11 @@ import random
 from typing import List, Tuple
 
 import numpy as np
-from daaja.augmentors.ner.ner_augmentor import NerAugmentor
+from daaja.augmentors.sequence_labeling.sequence_labeling_augmentor import \
+    SequenceLabelingAugmentor
 
 
-class ShuffleWithinSegmentsAugmentor(NerAugmentor):
+class ShuffleWithinSegmentsAugmentor(SequenceLabelingAugmentor):
     def __init__(self,
                  p: float = 0.1) -> None:
         self.p = p
