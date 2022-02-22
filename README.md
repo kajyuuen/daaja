@@ -8,6 +8,10 @@ This repository has a implementations of data augmentation for NLP for Japanese:
 pip install daaja
 ```
 
+## Example
+
+- [Quick Example](./examples/quick_example.ipynb)
+
 ## How to use
 
 ### Augmenter
