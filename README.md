@@ -23,9 +23,11 @@ pip install daaja
 |     RandamSwapAugmentor     | [\[1\]](https://arxiv.org/abs/1901.11196)  |
 | SynonymReplacementAugmentor | [\[1\]](https://arxiv.org/abs/1901.11196)  |
 |  BackTranslationAugmentor   | [\[3\]](https://aclanthology.org/P16-1009) |
+|     ContextualAugmentor     | [\[4\]](https://arxiv.org/abs/2003.02245)  |
 
 - \[1\] [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
 - \[3\] [Improving Neural Machine Translation Models with Monolingual Data](https://aclanthology.org/P16-1009/)
+- \[4\] [Data Augmentation using Pre-trained Transformer Models](https://arxiv.org/abs/2003.02245/)
 
 #### How to use
 
