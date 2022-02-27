@@ -18,14 +18,16 @@ pip install daaja
 
 #### Sentence Augmenter
 
-|          Augmenter          | ref                                       |
-| :-------------------------: | ----------------------------------------- |
-|    RandamDeleteAugmentor    | [\[1\]](https://arxiv.org/abs/1901.11196) |
-|    RandamInsertAugmentor    | [\[1\]](https://arxiv.org/abs/1901.11196) |
-|     RandamSwapAugmentor     | [\[1\]](https://arxiv.org/abs/1901.11196) |
-| SynonymReplacementAugmentor | [\[1\]](https://arxiv.org/abs/1901.11196) |
+|          Augmenter          | ref                                        |
+| :-------------------------: | ------------------------------------------ |
+|    RandamDeleteAugmentor    | [\[1\]](https://arxiv.org/abs/1901.11196)  |
+|    RandamInsertAugmentor    | [\[1\]](https://arxiv.org/abs/1901.11196)  |
+|     RandamSwapAugmentor     | [\[1\]](https://arxiv.org/abs/1901.11196)  |
+| SynonymReplacementAugmentor | [\[1\]](https://arxiv.org/abs/1901.11196)  |
+|  BackTranslationAugmentor   | [\[3\]](https://aclanthology.org/P16-1009) |
 
 - \[1\] [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
+- \[3\] [Improving Neural Machine Translation Models with Monolingual Data](https://aclanthology.org/P16-1009/)
 
 #### Sequence Labeling Augmenter
 
