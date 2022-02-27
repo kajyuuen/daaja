@@ -12,11 +12,9 @@ pip install daaja
 
 - [Quick Example](./examples/quick_example.ipynb)
 
-## How to use
+## Augmenter
 
-### Augmenter
-
-#### Sentence Augmenter
+### Sentence Augmenter
 
 |          Augmenter          | ref                                        |
 | :-------------------------: | ------------------------------------------ |
@@ -29,7 +27,15 @@ pip install daaja
 - \[1\] [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
 - \[3\] [Improving Neural Machine Translation Models with Monolingual Data](https://aclanthology.org/P16-1009/)
 
-#### Sequence Labeling Augmenter
+#### How to use
+
+```python
+from daaja.augmentors.sentence import SynonymReplaceAugmentor
+augmentor = SynonymReplaceAugmentor()
+augmentor.augment("日本語でデータ拡張を行う") #=> 日本語でデータ伸暢を行う
+```
+
+### Sequence Labeling Augmenter
 
 |             Augmenter              | ref                                       |
 | :--------------------------------: | ----------------------------------------- |
@@ -40,7 +46,16 @@ pip install daaja
 
 - \[2\] [An Analysis of Simple Data Augmentation for Named Entity Recognition](https://arxiv.org/abs/2010.11683)
 
-### Method
+#### How to use
+
+```python
+from daaja.augmentors.sequence_labeling import SynonymReplacementAugmentor
+
+augmentor.augment(["君", "は", "隆弘", "君", "かい"], ["O", "O", "B-PER", "O", "O"])
+# => (['は', '君', '隆弘', '君', 'かい'], ['O', 'O', 'B-PER', 'O', 'O'])
+```
+
+## Method
 
 #### [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
 
