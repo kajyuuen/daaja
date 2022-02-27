@@ -16,6 +16,8 @@ tqdm = "^4.62.3"
 transformers = "^4.16.2"
 torch = "^1.10.2"
 sentencepiece = "^0.1.96"
+fugashi = "^1.1.2"
+ipadic = "^1.0.0"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
