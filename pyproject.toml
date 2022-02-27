@@ -15,6 +15,7 @@ pandas = ">=1.2"
 tqdm = "^4.62.3"
 transformers = "^4.16.2"
 torch = "^1.10.2"
+sentencepiece = "^0.1.96"
 
 [tool.poetry.dev-dependencies]
 flake8 = "^4.0.1"
