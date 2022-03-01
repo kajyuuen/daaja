@@ -23,9 +23,10 @@ def main(input_path: Path,
          alpha_ri: float,
          alpha_rs: float,
          p_rd: float,
-         num_aug: int):
+         num_aug: int,
+         verbose: bool):
     datum = load_tsv(input_path=input_path)
-    eda = EasyDataAugmentor(alpha_sr=alpha_sr, alpha_ri=alpha_ri, alpha_rs=alpha_rs, p_rd=p_rd, num_aug=num_aug)
+    eda = EasyDataAugmentor(alpha_sr=alpha_sr, alpha_ri=alpha_ri, alpha_rs=alpha_rs, p_rd=p_rd, num_aug=num_aug, verbose=verbose)
 
     results = []
     for data in tqdm(datum):
@@ -64,6 +65,7 @@ if __name__ == "__main__":
                         help="percent of words in each sentence to be inserted")
     parser.add_argument("--alpha_rs", default=0.1, type=float,
                         help="percent of words in each sentence to be swapped")
+    # setting
+    parser.add_argument("--verbose", action='store_true')
     args = parser.parse_args()
-
-    main(args.input, args.output, args.alpha_sr, args.alpha_ri, args.alpha_rs, args.alpha_rd, args.num_aug)
+    main(args.input, args.output, args.alpha_sr, args.alpha_ri, args.alpha_rs, args.alpha_rd, args.num_aug, args.verbose)

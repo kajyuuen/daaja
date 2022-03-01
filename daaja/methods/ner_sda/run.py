@@ -24,10 +24,11 @@ def main(input_path: Path,
          p_mr: float,
          p_sis: float,
          p_sr: float,
-         num_aug: int):
+         num_aug: int,
+         verbose: bool):
     tokens_list, labels_list = load_conll(input_path=input_path)
     sda = SimpleDataAugmentationforNER(tokens_list=tokens_list, labels_list=labels_list, p_power=p_power,
-                                       p_lwtr=p_lwtr, p_mr=p_mr, p_sis=p_sis, p_sr=p_sr, num_aug=num_aug)
+                                       p_lwtr=p_lwtr, p_mr=p_mr, p_sis=p_sis, p_sr=p_sr, num_aug=num_aug, verbose=verbose)
 
     result_tokens_list, result_labels_list = [], []
     for tokens, labels in tqdm(zip(tokens_list, labels_list)):
@@ -88,6 +89,8 @@ if __name__ == "__main__":
                         help="percent of words in each sentence to be shuffle")
     parser.add_argument("--p_sr", default=0.1, type=float,
                         help="percent of words in each sentence to be replaced by synonyms")
+    # setting
+    parser.add_argument("--verbose", action='store_true')
     args = parser.parse_args()
 
-    main(args.input, args.output, args.p_power, args.p_lwtr, args.p_mr, args.p_sis, args.p_sr, args.num_aug)
+    main(args.input, args.output, args.p_power, args.p_lwtr, args.p_mr, args.p_sis, args.p_sr, args.num_aug, args.verbose)

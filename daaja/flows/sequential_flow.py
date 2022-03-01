@@ -8,15 +8,17 @@ from tqdm import tqdm
 class SequentialSentenceFlow:
     def __init__(self,
                  augmentors: List[SentenceAugmentor],
-                 num_aug: int) -> None:
+                 num_aug: int,
+                 verbose: bool = True) -> None:
         self.augmentors = augmentors
         self.num_aug = num_aug
+        self.verbose = verbose
 
     def augments(self, sentence: str) -> List[str]:
         augmented_sentences = []
         num_per_technique = int(self.num_aug / len(self.augmentors)) + 1
 
-        for augmentor in tqdm(self.augmentors, desc="augment"):
+        for augmentor in tqdm(self.augmentors, desc="augment", disable=not self.verbose):
             for _ in range(num_per_technique):
                 augmented_sentences.append(augmentor.augment(sentence))
 
