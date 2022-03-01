@@ -13,7 +13,7 @@ from daaja.tokenizer import Tokenizer
 
 
 class EasyDataAugmentor:
-    def __init__(self, alpha_sr: float, alpha_ri: float, alpha_rs: float, p_rd: float, num_aug: int):
+    def __init__(self, alpha_sr: float, alpha_ri: float, alpha_rs: float, p_rd: float, num_aug: int, verbose: bool = True):
         resouces = Resouces()
         self.tokenizer = Tokenizer()
 
@@ -23,7 +23,8 @@ class EasyDataAugmentor:
                 RandamInsertAugmentor(alpha=alpha_ri, resouces=resouces, tokenizer=self.tokenizer),
                 RandamSwapAugmentor(alpha=alpha_rs, tokenizer=self.tokenizer),
                 RandamDeleteAugmentor(p=p_rd, tokenizer=self.tokenizer)],
-            num_aug=num_aug)
+            num_aug=num_aug,
+            verbose=verbose)
 
     def augments(self, sentence: str) -> List[str]:
         return self.flow.augments(sentence)

@@ -9,15 +9,17 @@ from tqdm import tqdm
 class SequentialSequenceLabelingFlow:
     def __init__(self,
                  augmentors: List[SequenceLabelingAugmentor],
-                 num_aug: int) -> None:
+                 num_aug: int,
+                 verbose: bool = True) -> None:
         self.augmentors = augmentors
         self.num_aug = num_aug
+        self.verbose = verbose
 
     def augments(self, tokens: List[str], labels: List[str]) -> Tuple[List[List[str]], List[List[str]]]:
         augmented_tokens_and_labels = []
         num_per_technique = int(self.num_aug / len(self.augmentors)) + 1
 
-        for augmentor in tqdm(self.augmentors, desc="augment"):
+        for augmentor in tqdm(self.augmentors, desc="augment", disable=not self.verbose):
             for _ in range(num_per_technique):
                 aug_tokens, aug_labels = augmentor.augment(tokens, labels)
                 augmented_tokens_and_labels.append([aug_tokens, aug_labels])
