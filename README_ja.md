@@ -1,12 +1,10 @@
 # daaja
 
-This repository has a implementations of data augmentation for NLP for Japanese:
+このリポジトリでは日本語に対するデータ拡張手法を提供しています。
+下記の記事にて、このライブラリの使い方や性能について説明しているのでご確認ください。
 
-## For Japanese
-
-README_ja.md is written in Japanese.
-
-[README_ja](./README_ja.md)
+- [日本語自然言語処理の Data Augmentation ライブラリ daaja を作りました](https://kajyuuen.hatenablog.com/entry/2022/02/14/094602)
+- [日本語文書分類・固有表現抽出タスクに対する Data Augmentation の性能検証](https://kajyuuen.hatenablog.com/entry/2022/02/21/095628)
 
 ## Install
 
@@ -20,11 +18,11 @@ pip install daaja
 
 ## Augmenters
 
-`Augmenters` provides various types of data augmentation methods.
+`Augmenters`では様々なデータ拡張手法を提供しています。
 
 ### Sentence Augmenter
 
-`Sentence Augmenter` is a data augmentation method for sentences.
+`Sentence Augmenter`は文章に対するデータ拡張手法です。文書分類や翻訳タスク等で利用できます。
 
 |          Augmenter          | ref                                        |
 | :-------------------------: | ------------------------------------------ |
@@ -49,7 +47,7 @@ augmentor.augment("日本語でデータ拡張を行う") #=> 日本語でデー
 
 ### Sequence Labeling Augmenter
 
-`Sequence Labeling Augmenter` is a data augmentation method for sequence labeling task.
+`Sequence Labeling Augmenter`は系列ラベリング向けのデータ拡張手法です。固有表現抽出タスクなどで利用できます。
 
 |             Augmenter              | ref                                       |
 | :--------------------------------: | ----------------------------------------- |
@@ -71,7 +69,7 @@ augmentor.augment(["君", "は", "隆弘", "君", "かい"], ["O", "O", "B-PER",
 
 ## Methods
 
-The same method as in the following papers can be tried in `methods`.
+`methods`では論文の手法をそのまま適用することができます。
 
 #### [EDA: Easy Data Augmentation Techniques for Boosting Performance on Text Classification Tasks](https://arxiv.org/abs/1901.11196)
 
@@ -81,7 +79,7 @@ The same method as in the following papers can be tried in `methods`.
 python -m daaja.methods.eda.run --input input.tsv --output data_augmentor.tsv
 ```
 
-The format of input.tsv is as follows:
+input.tsv のフォーマットは下のようにしてください。
 
 ```tsv
 1	この映画はとてもおもしろい
@@ -107,7 +105,7 @@ print(aug_texts)
 python -m daaja.methods.ner_sda.run --input input.tsv --output data_augmentor.tsv
 ```
 
-The format of input.tsv is as follows:
+input.tsv のフォーマットは下のようにしてください。
 
 ```tsv
 私	O
