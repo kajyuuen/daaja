@@ -8,6 +8,11 @@ README_ja.md is written in Japanese.
 
 [README_ja](./README_ja.md)
 
+This library about usage and performance is also described in the following article.
+
+- [日本語自然言語処理の Data Augmentation ライブラリ daaja を作りました](https://kajyuuen.hatenablog.com/entry/2022/02/14/094602)
+- [日本語文書分類・固有表現抽出タスクに対する Data Augmentation の性能検証](https://kajyuuen.hatenablog.com/entry/2022/02/21/095628)
+
 ## Install
 
 ```
