@@ -1,6 +1,6 @@
 # daaja
 
-This repository has a implementations of data augmentation for NLP for Japanese:
+This repository has implementations of data augmentation for NLP for Japanese:
 
 ## For Japanese
 
