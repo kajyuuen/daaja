@@ -16,7 +16,7 @@ logger = logging.getLogger(__name__)
 class Resouces:
     DIR = Path("/tmp/eda_ja")
     WORDNET_PATH = DIR / Path("wnjpn.db.gz")
-    WORDNER_URL = "http://compling.hss.ntu.edu.sg/wnja/data/1.1/wnjpn.db.gz"
+    WORDNER_URL = "https://github.com/bond-lab/wnja/releases/download/v1.1/wnjpn.db.gz"
     STOPWORDS_PATH = DIR / Path("stopwords.txt")
     STOPWORDS_URL = "http://svn.sourceforge.jp/svnroot/slothlib/CSharp/Version1/SlothLib/NLP/Filter/StopWord/word/Japanese.txt"
 
