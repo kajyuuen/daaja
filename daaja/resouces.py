@@ -31,7 +31,7 @@ class Resouces:
 
         #  Download and Load stopwords
         self.download_stopwords()
-        with open(self.STOPWORDS_PATH) as f:
+        with open(self.STOPWORDS_PATH, encoding='utf-8') as f:
             stopwords_txt = f.read()
         self.stopwords = [line.strip() for line in stopwords_txt.split("\n") if len(line.strip()) > 0]
 
@@ -40,7 +40,7 @@ class Resouces:
             logging.info("The stopword file already exists.")
             return
         res = requests.get(self.STOPWORDS_URL).content.decode("utf-8")
-        with open(self.STOPWORDS_PATH, "w") as f:
+        with open(self.STOPWORDS_PATH, "w", encoding='utf-8') as f:
             f.write(res)
 
     def download_wordnet(self) -> None:
